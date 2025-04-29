@@ -52,7 +52,7 @@ export default function MoviesSection() {
         {currentIndex > 0 && (
           <button
             onClick={() => handleScroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 rounded-full z-10 flex items-center justify-center group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-40 bg-white/20 rounded-3xl  z-10 flex items-center justify-center group-hover:opacity-100 transition-opacity duration-300"
             style={{ opacity: 0.7 }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-8 h-8">
@@ -116,7 +116,7 @@ export default function MoviesSection() {
         {currentIndex < maxIndex && (
           <button
             onClick={() => handleScroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 rounded-full z-10 flex items-center justify-center group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute right-[-60] top-1/2 -translate-y-1/2 w-8 h-40 bg-white/20 rounded-3xl z-10 flex items-center justify-center group-hover:opacity-100 transition-opacity duration-300"
             style={{ opacity: 0.7 }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-8 h-8">
