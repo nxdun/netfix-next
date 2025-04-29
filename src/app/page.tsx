@@ -8,11 +8,17 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div>
+      {/* ! Header section */}
       <Header />
+      {/* 🔥 Hero section */}
       <HeroSection />
+      {/* 🔥 Movies section */}
       <MoviesSection />
+      {/* 🔥 Reasons section */}
       <ReasonsSection />
+      {/* 🔥 FAQ section */}
       <FAQSection />
+      {/* ! Footer section */}
       <Footer />
     </div>
   );
