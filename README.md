@@ -54,7 +54,6 @@ This project is a Netflix-inspired web application built using **Next.js** and *
 ## Notes
 
 - This is a demo project and does not include backend functionality.
-- Replace mock data with real APIs for production use.
 
 ---
 🔥 Built for learning and demonstration purposes.
