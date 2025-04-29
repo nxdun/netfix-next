@@ -10,7 +10,7 @@ const ChevronRightIcon = () => (
 
 export default function HeroSection() {
   return (
-    <section className="bg-black relative text-center text-white h-screen flex flex-col justify-center items-center overflow-hidden"> {/* Changed bg-transparent to bg-black as base */}
+    <section className="bg-black relative text-center text-white h-screen flex flex-col justify-center items-center overflow-hidden"> 
       {/* Background Image Container */}
       <div className="absolute inset-0 opacity-50"> {/* Added opacity to image container */}
         <Image
@@ -55,27 +55,28 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Refined Curve/Glow Implementation (z-10) */}
+      {/*Blue Glow Div */}
+
       <div 
-        // Adjusted height and bottom position slightly if needed
-        className="absolute bottom-[-6px] h-14 w-[200%] left-[-50%] sm:w-[180%] sm:left-[-40%] md:w-[150%] md:left-[-25%] lg:w-[130%] lg:left-[-15%] z-10 pointer-events-none 
-                   rounded-tl-[50%_100%] rounded-tr-[50%_100%] 
-                   // Adjusted ::before for thicker line and refined gradient
-                   before:content-[''] before:absolute before:inset-0 before:z-[-1] before:mt-[-6px] // Made thicker (smaller negative margin)
-                   before:rounded-[inherit] 
-                   // Refined gradient colors - adjust these hex codes precisely
-                   before:bg-gradient-to-r before:from-[#50102c] before:via-[#b82869] before:to-[#e50914] 
-                   " 
-        // Inline style for the refined blue glow radial gradient
+        className="absolute left-[-50%] bottom-0 z-20 box-border h-20 w-[200%] border-b-4 border-x-0 border-t-0 border-transparent pointer-events-none"
         style={{ 
-          // Adjusted gradient: stronger, wider blue/purple glow
-          background: 'radial-gradient(50% 500% at 50% -400%, rgba(75, 85, 220, 0.45) 75%, rgba(0, 0, 0, 0.0) 100%)', 
-          backgroundClip: 'padding-box', 
-          boxSizing: 'border-box'
-        }} 
+        background: 'radial-gradient(50% 500% at 50% -400%, rgba(64, 97, 231, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%), black', 
+        backgroundClip: 'padding-box', 
+          }} 
       >
-        {/* The main div now primarily provides the blue glow via background */}
-        {/* The red line is handled by the ::before pseudo-element */}
+        {/* gradien line div*/}
+      </div>
+      <div 
+        className="absolute left-[-50%] bottom-19 z-20 box-border h-20 w-[200%] pointer-events-none"
+        style={{
+        borderImageSource: 'linear-gradient(to right, rgba(33, 13, 22, 1) 16%, rgba(184, 40, 105, 1), rgba(229, 9, 20, 1), rgba(184, 40, 105, 1), rgba(33, 13, 22, 1) 84%)',
+        borderImageSlice: 1,
+        borderBottomWidth: '3px',
+        borderStyle: 'solid',
+        borderColor: 'transparent',
+          }}
+      >
+        {/* The border-image provides the red line */}
       </div>
     </section>
   );
