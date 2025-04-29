@@ -3,20 +3,24 @@ import mockData from "@/data/mockData.json";
 
 export default function ReasonsSection() {
   return (
-    <section className="p-8 sm:p-16">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-6">More Reasons to Love Netflix</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+    <section className="section-padding">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-10">More Reasons to Join</h2>
+      <div className="flex flex-col sm:flex-row flex-wrap justify-stdart items-stretch gap-3">
         {mockData.reasons.map((reason, index) => (
-          <div key={index} className="bg-gray-800 p-4 rounded">
-            <Image
-              src={reason.image}
-              alt={reason.title}
-              width={400}
-              height={160}
-              className="w-full h-40 object-cover rounded"
-            />
-            <h3 className="mt-4 text-lg font-bold">{reason.title}</h3>
-            <p className="mt-2">{reason.description}</p>
+              <div
+              key={index}
+              className="relative flex-1 basis-[calc(25%-0.75rem)] min-h-[262px] bg-[linear-gradient(149deg,_#192247_0%,_#210e17_96.86%)] pt-6 px-5 pb-6 rounded-xl flex flex-col"
+              >
+            <h3 className="text-2xl font-bold">{reason.title}</h3>
+            <p className="text-base mt-2">{reason.description}</p>
+            <div className="absolute bottom-4 right-4">
+              <Image
+                src={reason.image}
+                alt={reason.title}
+                width={72}
+                height={72}
+              />
+            </div>
           </div>
         ))}
       </div>

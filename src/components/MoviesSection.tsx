@@ -4,6 +4,19 @@ import Image from "next/image";
 import mockData from "@/data/mockData.json";
 import { useState } from "react";
 
+// Chevron icons for arrows
+const ChevronLeftIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 sm:w-10 sm:h-10">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+  </svg>
+);
+
+const ChevronRightIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 sm:w-10 sm:h-10">
+    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+  </svg>
+);
+
 export default function MoviesSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerView = 6; // Number of items visible at a time
@@ -18,19 +31,16 @@ export default function MoviesSection() {
   };
 
   return (
-    <section className="p-8 sm:p-16">
+    <section className="section-padding py-12">
       <h2 className="text-2xl sm:text-3xl font-bold mb-6">Trending Now</h2>
-      <div className="relative">
-        {/* Left Scroll Button */}
+      <div className="relative group">
         <button
           onClick={() => handleScroll("left")}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"
-          disabled={currentIndex === 0}
+          className={`absolute left-0 top-0 bottom-0 w-16 bg-black bg-opacity-50 text-white z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${currentIndex === 0 ? 'hidden' : ''}`}
         >
-          &#8249;
+          <ChevronLeftIcon />
         </button>
 
-        {/* Scrollable Movies Container */}
         <div className="overflow-hidden">
           <div
             className="flex transition-transform duration-300"
@@ -39,32 +49,36 @@ export default function MoviesSection() {
             {mockData.movies.map((movie, index) => (
               <div
                 key={index}
-                className="relative min-w-[16.66%] flex-shrink-0 p-2"
+                className="relative min-w-[calc(100%/6)] flex-shrink-0 px-1"
               >
-                <Image
-                  src={movie.image}
-                  alt={movie.title}
-                  width={300}
-                  height={450}
-                  className="w-full h-[400px] object-cover rounded-lg" // Adjusted height and rounded edges
-                />
-                <div
-                  className="absolute bottom-2 left-2 text-white text-2xl font-bold" // Reduced number size
-                >
-                  {index + 1}
+                <div className="relative w-full px-2 py-0">
+                  <Image
+                    src={movie.image}
+                    alt={movie.title}
+                    width={200}
+                    height={170}
+                    className="w-full h-auto object-cover rounded"
+                  />
+                  <div
+                    className="absolute bottom-[50px] left-[10px] text-black text-6xl sm:text-8xl font-bold"
+                    style={{ 
+                      WebkitTextStroke: '2px white',
+                      textShadow: 'none'
+                    }}
+                  >
+                    {index + 1}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right Scroll Button */}
         <button
           onClick={() => handleScroll("right")}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"
-          disabled={currentIndex >= totalItems - itemsPerView}
+          className={`absolute right-0 top-0 bottom-0 w-16 bg-black bg-opacity-50 text-white z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${currentIndex >= totalItems - itemsPerView ? 'hidden' : ''}`}
         >
-          &#8250;
+          <ChevronRightIcon />
         </button>
       </div>
     </section>

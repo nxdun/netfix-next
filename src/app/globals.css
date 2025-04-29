@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --section-padding-x: 9.25rem; /* 148px */
+  --hero-padding-x: 2rem; /* 32px */
+  --section-padding-y: 5rem; /* 80px */
 }
 
 @theme inline {
@@ -14,7 +17,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -23,4 +26,29 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Standard section classes */
+.section-padding {
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+.section-padding-x {
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
+}
+
+.hero-padding-x {
+  padding-left: var(--hero-padding-x);
+  padding-right: var(--hero-padding-x);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding-x: 1.5rem; /* 24px */
+    --section-padding-y: 3rem; /* 48px */
+  }
 }

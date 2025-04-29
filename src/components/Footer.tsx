@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-400 p-8 sm:p-16">
+    <footer className="bg-black text-gray-400 section-padding">
       <p className="mb-6 text-sm">Questions? <a href="#" className="underline">Contact us.</a></p>
       <ul className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm mb-8">
         <li><a href="#" className="hover:underline">FAQ</a></li>
