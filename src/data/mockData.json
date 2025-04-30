@@ -4,12 +4,12 @@
     { "title": "Movie 2", "image": "/poster2.jpg" },
     { "title": "Movie 3", "image": "/poster3.jpg" },
     { "title": "Movie 4", "image": "/poster4.jpg" },
-    { "title": "Movie 2", "image": "/poster5.jpg" },
-    { "title": "Movie 3", "image": "/poster6.jpg" },
-    { "title": "Movie 4", "image": "/poster7.jpg" },
-    { "title": "Movie 5", "image": "/poster8.jpg" },
-    { "title": "Movie 6", "image": "/poster9.jpg" },
-    { "title": "Movie 7", "image": "/poster10.jpg" }
+    { "title": "Movie 5", "image": "/poster5.jpg" },
+    { "title": "Movie 6", "image": "/poster6.jpg" },
+    { "title": "Movie 7", "image": "/poster7.jpg" },
+    { "title": "Movie 8", "image": "/poster8.jpg" },
+    { "title": "Movie 9", "image": "/poster9.jpg" },
+    { "title": "Movie 10", "image": "/poster10.jpg" }
   ],
   "reasons": [
     {

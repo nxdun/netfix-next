@@ -1,4 +1,4 @@
-# Netflix Clone - Next.js
+# Netflix Clone - Next.js (inbox.nadun@gmail.com)
 
 This project is a Netflix-inspired web application built using **Next.js** and **TailwindCSS**. It showcases a modern UI with dynamic content rendering.
 
@@ -20,19 +20,15 @@ This project is a Netflix-inspired web application built using **Next.js** and *
 
 ## Getting Started
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Install dependencies:
+1. Install dependencies:
    ```bash
    npm install
    ```
-3. Run the development server:
+2. Run the development server:
    ```bash
    npm run dev
    ```
-4. Open the app in your browser:
+3. Open the app in your browser:
    ```
    http://localhost:3000
    ```
